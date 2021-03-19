@@ -4,7 +4,7 @@
 
 Initial release.
 
-***Added:**
+**Added:**
 - Readme
 - Change log
 - License
