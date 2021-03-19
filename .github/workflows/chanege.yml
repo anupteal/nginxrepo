@@ -34,7 +34,7 @@ jobs:
         
         ~/git-chglog -o CHANGELOG.md  $(git describe --tags $(git rev-list --tags --max-count=1))
         
-        echo "${{ secrets.GITHUB_TOKEN }}" > /tmp/token
+        echo "${{ secrets.my_token }}" > /tmp/token
         gh auth login --with-token < /tmp/token
         
         head_branch="${{ github.head_ref }}"
