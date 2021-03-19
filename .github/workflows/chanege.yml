@@ -29,8 +29,8 @@ jobs:
         chmod +x ~/semtag
     - name: update changelog
       run: |
-        git config user.name "Service GitHub"
-        git config user.email ServiceGitHub@shrss.com
+        git config user.name "anupteal"
+        git config user.email anup.singh@igtsolutions.com
         
         ~/git-chglog -o CHANGELOG.md  $(git describe --tags $(git rev-list --tags --max-count=1))
         
