@@ -27,6 +27,13 @@ jobs:
       run: |
         curl https://raw.githubusercontent.com/nico2sh/semtag/master/semtag --output ~/semtag
         chmod +x ~/semtag
+    - uses: BobAnkh/auto-generate-changelog@master
+      with:
+        REPO_NAME: 'anupteal/nginxrepo'
+        ACCESS_TOKEN: ${{secrets.my_token}}
+        PATH: '/CHANGELOG.md'
+        COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
+        TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
     - name: update changelogs
       run: |
         git config user.name "anupteal"
