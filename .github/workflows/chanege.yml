@@ -10,17 +10,51 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  changelog:
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+    - name: checkout code
+      uses: actions/checkout@v2
       with:
-        java-version: 1.8
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+        fetch-depth: 0
+    - name: download git-chglog
+      run: |
+        cd ~
+        wget https://github.com/git-chglog/git-chglog/releases/download/v0.10.0/git-chglog_0.10.0_linux_amd64.tar.gz
+        tar xvf git-chglog_0.10.0_linux_amd64.tar.gz
+        cd -
+    - name: download semtag
+      run: |
+        curl https://raw.githubusercontent.com/nico2sh/semtag/master/semtag --output ~/semtag
+        chmod +x ~/semtag
+    - name: update changelog
+      run: |
+        git config user.name "Service GitHub"
+        git config user.email ServiceGitHub@shrss.com
+        
+        ~/git-chglog -o CHANGELOG.md  $(git describe --tags $(git rev-list --tags --max-count=1))
+        
+        echo "${{ secrets.GITHUB_TOKEN }}" > /tmp/token
+        gh auth login --with-token < /tmp/token
+        
+        head_branch="${{ github.head_ref }}"
+        branch="${head_branch//\//-}"
+        
+        gh pr close changelog/${branch} || true
+        git push origin --delete changelog/${branch} || true
+        
+        git checkout -b changelog/${branch}
+        git add CHANGELOG.md
+        git commit -am"fix: Updating changelog for action: ${branch}"
+        git push origin changelog/${branch}
+        
+        gh pr create \
+          --title "${branch} update changelog" \
+          --base develop \
+          --body "Updating changelog for action: ${branch} from action: ${{ github.run_id }}" \
+          --assignee "shrss-service-account" \
+          --reviewer "olga-raskin" \
+          --fill
+
+    - name: bump version
+      run: ~/semtag `cat ./version`
