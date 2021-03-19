@@ -27,7 +27,7 @@ jobs:
       run: |
         curl https://raw.githubusercontent.com/nico2sh/semtag/master/semtag --output ~/semtag
         chmod +x ~/semtag
-    - name: update changelog
+    - name: update changelogs
       run: |
         git config user.name "anupteal"
         git config user.email anup.singh@igtsolutions.com
