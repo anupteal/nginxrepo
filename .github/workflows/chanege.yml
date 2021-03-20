@@ -32,6 +32,8 @@ jobs:
         git config user.name "anupteal"
         git config user.email anup.singh@igtsolutions.com
         
+        cat CHANGELOG.md > /tmp/abc
+        
         ~/git-chglog -o CHANGELOG.md  $(git describe --tags $(git rev-list --tags --max-count=1))
         cat CHANGELOG.md
         echo "${{ secrets.MY_TOKEN }}" > /tmp/token
@@ -44,6 +46,7 @@ jobs:
         git push origin --delete changelog/${branch} || true
         
         git checkout -b changelog/${branch}
+        cat /tmp/abc >> CHANGELOG.md
         git add CHANGELOG.md
         git commit -am"fix: Updating changelog for action: ${branch}"
         git push origin changelog/${branch}
