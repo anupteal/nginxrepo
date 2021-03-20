@@ -52,8 +52,6 @@ jobs:
           --title "${branch} update changelog" \
           --base develop \
           --body "Updating changelog for action: ${branch} from action: ${{ github.run_id }}" \
-          --assignee "shrss-service-account" \
-          --reviewer "olga-raskin" \
           --fill
 
     - name: bump version
