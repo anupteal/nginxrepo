@@ -19,8 +19,8 @@ jobs:
 
       - name: Commit files
         env:
-          CI_USER: ${{ anupteal }}
-          CI_EMAIL: ${{ anup.singh@igtsolutions.com }}
+          CI_USER: anupteal
+          CI_EMAIL: anup.singh@igtsolutions.com 
         run: |
           git config --local user.email "$CI_EMAIL"
           git config --local user.name "$CI_USER"
@@ -29,7 +29,7 @@ jobs:
       - name: Push changes
         if: env.push == 'true'
         env:
-          CI_USER: ${{ secrets.anupteal }}
+          CI_USER: anupteal
           CI_TOKEN: ${{ secrets.MY_TOKEN }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
