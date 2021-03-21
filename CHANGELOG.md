@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/anupteal/nginxrepo/tree/HEAD)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.6...HEAD)
+
+**Merged pull requests:**
+
+- Anupteal patch 1 [\#22](https://github.com/anupteal/nginxrepo/pull/22) ([anupteal](https://github.com/anupteal))
+
+## [v1.6](https://github.com/anupteal/nginxrepo/tree/v1.6) (2021-03-21)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.5...v1.6)
+
 ## [v1.5](https://github.com/anupteal/nginxrepo/tree/v1.5) (2021-03-21)
 
 [Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.4...v1.5)
