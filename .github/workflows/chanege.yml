@@ -6,7 +6,6 @@ on:
     types: [created, edited]
 
 jobs:
-jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
