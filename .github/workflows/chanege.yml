@@ -1,21 +1,62 @@
-name: Generate changelog
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Java CI with Gradle
+
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
-  release:
-    types: [created, edited]
 
 jobs:
-  generate-changelog:
-    runs-on: ubuntu-latest
+  changelog:
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout code
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: BobAnkh/auto-generate-changelog@master
-      with:
-        REPO_NAME: 'anupteal/nginxrepo'
-        ACCESS_TOKEN: ${{secrets.my_token}}
-        PATH: '/CHANGELOG.md'
-        COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-        TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
+    - name: download git-chglog
+      run: |
+        cd ~
+        wget https://github.com/git-chglog/git-chglog/releases/download/v0.10.0/git-chglog_0.10.0_linux_amd64.tar.gz
+        tar xvf git-chglog_0.10.0_linux_amd64.tar.gz
+        cd -
+    - name: download semtag
+      run: |
+        curl https://raw.githubusercontent.com/nico2sh/semtag/master/semtag --output ~/semtag
+        chmod +x ~/semtag
+    - name: update changelogs
+      run: |
+        git config user.name "anupteal"
+        git config user.email anup.singh@igtsolutions.com
+        
+        cat CHANGELOG.md > /tmp/abc
+        
+        ~/git-chglog -o CHANGELOG.md  $(git describe --tags $(git rev-list --tags --max-count=1))
+        cat CHANGELOG.md
+        echo "${{ secrets.MY_TOKEN }}" > /tmp/token
+        gh auth login --with-token < /tmp/token
+        
+        head_branch="${{ github.head_ref }}"
+        branch="${head_branch//\//-}"
+        
+        gh pr close changelog/${branch} || true
+        git push origin --delete changelog/${branch} || true
+        
+        git checkout -b changelog/${branch}
+        cat /tmp/abc >> CHANGELOG.md
+        git add CHANGELOG.md
+        git commit -am"fix: Updating changelog for action: ${branch}"
+        git push origin changelog/${branch}
+        
+        gh pr create \
+          --title "${branch} update changelog" \
+          --base develop \
+          --body "Updating changelog for action: ${branch} from action: ${{ github.run_id }}" \
+          --fill
+
+    - name: bump version
+      run: ~/semtag `cat ./version`
+
