@@ -1,13 +1,9 @@
-# This workflow will build a Java project with Gradle
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
-name: Java CI with Gradle
-
+name: Generate changelog
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
+  release:
+    types: [created, edited]
 
 jobs:
   update-changelog:
@@ -19,4 +15,3 @@ jobs:
       uses: thomaseizinger/keep-a-changelog-new-release@v1
       with:
         version: 0.6.0 # You probably want to have this dynamic :)
- 
