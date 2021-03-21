@@ -15,12 +15,12 @@ jobs:
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1
         with:
-          token: ${{ secrets.YOUR_GITHUB_TOKEN or GITHUB_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}
 
       - name: Commit files
         env:
-          CI_USER: ${{ secrets.anupteal }}
-          CI_EMAIL: ${{ secrets.anup.singh@igtsolutions.com }}
+          CI_USER: ${{ anupteal }}
+          CI_EMAIL: ${{ anup.singh@igtsolutions.com }}
         run: |
           git config --local user.email "$CI_EMAIL"
           git config --local user.name "$CI_USER"
