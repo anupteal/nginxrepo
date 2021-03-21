@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- updaed index.html [\#23](https://github.com/anupteal/nginxrepo/pull/23) ([anupteal](https://github.com/anupteal))
 - Anupteal patch 1 [\#22](https://github.com/anupteal/nginxrepo/pull/22) ([anupteal](https://github.com/anupteal))
 
 ## [v1.6](https://github.com/anupteal/nginxrepo/tree/v1.6) (2021-03-21)
