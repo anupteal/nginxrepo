@@ -18,8 +18,8 @@ jobs:
               uses: hashicorp/vault-action@v2.1.2
               with:
                 url: https://3.90.180.170/.com:8200
-                token: ${{ secrets.VaultToken }}
-                caCertificate: ${{ secrets.VAULTCA }}
+                method: approle
+                roleId: ${{ secrets.roleId }}
+                secretId: ${{ secrets.secretId   }}
                 secrets: |
-                    secret/eng/api/google key
-                    
+                    secret/eng/api/ new            
