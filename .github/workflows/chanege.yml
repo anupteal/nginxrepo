@@ -1,9 +1,5 @@
 name: Generate changelog
-on:
-  pull_request:
-    branches: [ master ]
-  release:
-    types: [created, edited]
+on: push
 
 jobs:
   generate_changelog:
