@@ -13,6 +13,7 @@ jobs:
           method: approle
           roleId: ${{ secrets.ROLEID }}
           secretId: ${{ secrets.SECRETID }}
+          token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
                secret/hello foo
       - name: Build Docker Image
