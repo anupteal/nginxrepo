@@ -11,7 +11,6 @@ jobs:
         with:
           url: http://3.90.180.170:8200
           method: approle
-          tlsSkipVerify: true
           roleId: ${{ secrets.ROLEID }}
           secretId: ${{ secrets.SECRETID }}
           secrets: |
