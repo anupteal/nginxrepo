@@ -10,8 +10,8 @@ jobs:
         uses: hashicorp/vault-action@v2.1.2
         with:
           url: http://3.90.180.170:8200
-          tlsSkipVerify: true
           method: approle
+          tlsSkipVerify: true
           roleId: ${{ secrets.ROLEID }}
           secretId: ${{ secrets.SECRETID }}
           secrets: |
