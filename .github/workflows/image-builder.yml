@@ -16,4 +16,4 @@ jobs:
           secrets: |
                secret/hello foo
       - name: Build Docker Image
-        run: env 
+        run: echo ${foo}
