@@ -1,0 +1,19 @@
+name: ImageBuilder
+# Run this workflow every time a new commit pushed to your repository
+on: push
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Import Secrets
+        uses: hashicorp/vault-action@v2.1.2
+        with:
+          url: http://3.90.180.170:8200
+          method: approle
+          roleId: ${{ secrets.ROLEID }}
+          secretId: ${{ secrets.SECRETID }}
+          secrets: |
+               secret/hello foo
+      - name: Build Docker Image
+        run: echo ${foo}

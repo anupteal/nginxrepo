@@ -1,5 +1,5 @@
 name: Generate changelog
-on:
+on: 
   pull_request:
     branches: [ master ]
   release:

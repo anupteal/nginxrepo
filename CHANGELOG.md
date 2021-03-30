@@ -2,10 +2,31 @@
 
 ## [Unreleased](https://github.com/anupteal/nginxrepo/tree/HEAD)
 
-[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.6...HEAD)
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.2...HEAD)
 
 **Merged pull requests:**
 
+- Update chanege.yml [\#28](https://github.com/anupteal/nginxrepo/pull/28) ([anupteal](https://github.com/anupteal))
+
+## [v0.0.2](https://github.com/anupteal/nginxrepo/tree/v0.0.2) (2021-03-30)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.1...v0.0.2)
+
+## [v0.0.1](https://github.com/anupteal/nginxrepo/tree/v0.0.1) (2021-03-25)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.7...v0.0.1)
+
+**Merged pull requests:**
+
+- updated [\#25](https://github.com/anupteal/nginxrepo/pull/25) ([anupteal](https://github.com/anupteal))
+
+## [v1.7](https://github.com/anupteal/nginxrepo/tree/v1.7) (2021-03-21)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v1.6...v1.7)
+
+**Merged pull requests:**
+
+- Update index.html [\#24](https://github.com/anupteal/nginxrepo/pull/24) ([anupteal](https://github.com/anupteal))
 - updaed index.html [\#23](https://github.com/anupteal/nginxrepo/pull/23) ([anupteal](https://github.com/anupteal))
 - Anupteal patch 1 [\#22](https://github.com/anupteal/nginxrepo/pull/22) ([anupteal](https://github.com/anupteal))
 
