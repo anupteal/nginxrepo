@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Anupteal patch 1 [\#30](https://github.com/anupteal/nginxrepo/pull/30) ([anupteal](https://github.com/anupteal))
 - Anupteal patch 1 [\#29](https://github.com/anupteal/nginxrepo/pull/29) ([anupteal](https://github.com/anupteal))
 - Update chanege.yml [\#28](https://github.com/anupteal/nginxrepo/pull/28) ([anupteal](https://github.com/anupteal))
 
