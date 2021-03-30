@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/anupteal/nginxrepo/tree/HEAD)
+
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.2...HEAD)
+
+**Merged pull requests:**
+
+- Update chanege.yml [\#28](https://github.com/anupteal/nginxrepo/pull/28) ([anupteal](https://github.com/anupteal))
+
 ## [v0.0.2](https://github.com/anupteal/nginxrepo/tree/v0.0.2) (2021-03-30)
 
 [Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.1...v0.0.2)
