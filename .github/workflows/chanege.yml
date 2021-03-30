@@ -33,3 +33,5 @@ jobs:
           CI_TOKEN: ${{ secrets.MY_TOKEN }}
         run: |
           git push "https://$CI_USER:$CI_TOKEN@github.com/$GITHUB_REPOSITORY.git" HEAD:master
+      - name: Build Docker Image
+        run: ls
