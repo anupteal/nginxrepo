@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/anupteal/nginxrepo/tree/HEAD)
+## [v0.0.3](https://github.com/anupteal/nginxrepo/tree/v0.0.3) (2021-03-30)
 
-[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.2...HEAD)
+[Full Changelog](https://github.com/anupteal/nginxrepo/compare/v0.0.2...v0.0.3)
 
 **Merged pull requests:**
 
+- updated semtag [\#31](https://github.com/anupteal/nginxrepo/pull/31) ([anupteal](https://github.com/anupteal))
 - Anupteal patch 1 [\#30](https://github.com/anupteal/nginxrepo/pull/30) ([anupteal](https://github.com/anupteal))
 - Anupteal patch 1 [\#29](https://github.com/anupteal/nginxrepo/pull/29) ([anupteal](https://github.com/anupteal))
 - Update chanege.yml [\#28](https://github.com/anupteal/nginxrepo/pull/28) ([anupteal](https://github.com/anupteal))
