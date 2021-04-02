@@ -15,5 +15,6 @@ jobs:
           secretId: ${{ secrets.SECRETID }}
           secrets: |
                secret/hello foo
+               kv/eng/api/google key
       - name: Build Docker Image
-        run: echo ${foo}
+        run: echo ${foo} ${key}
